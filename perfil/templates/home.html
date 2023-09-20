@@ -37,15 +37,15 @@
                             Shows Musicais
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="shows.html">Todos os shows</a>
-                            <a class="dropdown-item" href="shows.html">Shows de Itu</a>
-                            <a class="dropdown-item" href="shows.html">Shows de Salto</a>
-                            <a class="dropdown-item" href="shows.html">Shows de Campinas</a>
+                            <a class="dropdown-item" href="{% url 'exibir_shows' %}">Todos os shows</a>
+                            <a class="dropdown-item" href="{% url 'exibir_shows' %}">Shows de Itu</a>
+                            <a class="dropdown-item" href="{% url 'exibir_shows' %}">Shows de Salto</a>
+                            <a class="dropdown-item" href="{% url 'exibir_shows' %}">Shows de Campinas</a>
                         </div>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link link text-black display-4" href="podcasts.html"
+                        <a class="nav-link link text-black display-4" href="{% url 'podcast' %}"
                             aria-expanded="false">Podcasts</a>
                     </li>
                     <li class="nav-item">
@@ -63,7 +63,9 @@
                 </ul>
 
                 <div>
-                    <button class="btn btn-dark" onclick="ToggleTheme()">Tema</button>
+                    <button id="theme" class="theme-btn" aria-label="Change Theme" title="Change Theme" data-theme-btn>
+                        <div class="theme-icon"></div>
+                    </button>
                     <ion-icon class="icons" name="logo-instagram"></ion-icon>
                     <ion-icon class="icons" name="mail-outline"
                         style="margin-right: 40px; margin-left: 5px;"></ion-icon>

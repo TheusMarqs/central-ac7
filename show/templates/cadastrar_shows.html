@@ -1,0 +1,82 @@
+{% extends 'bases/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block 'head' %}
+    {% block 'title' %}<title>Cadastrar Shows</title>{% endblock %}
+{% endblock %}
+{% block 'body' %}
+<div class="container-fluid" style="background-color: whitesmoke;">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="display-6 text-center mt-4 mb-3">
+                Cadastrar Shows
+            </div>
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %} {{ form|crispy }}
+                <button type="submit" class="btn btn-success mt-3 mb-4">Cadastrar</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<section data-bs-version="5.1" class="footer1 programm5 cid-tJS9NNcTLZ" once="footers" id="footer03-23">
+
+
+
+
+
+    <div class="container">
+        <div class="row">
+
+            <div class="row-links mb-4">
+                <ul class="header-menu">
+
+
+
+
+                    <li class="header-menu-item mbr-fonts-style display-5"><a href="index.html#features13-1v"
+                            class="text-danger">Sobre</a></li>
+                    <li class="header-menu-item mbr-fonts-style display-5"><a href="index.html#features04-w"
+                            class="text-danger text-primary">Serviços</a></li>
+                    <li class="header-menu-item mbr-fonts-style display-5"><a href="index.html#contacts02-9"
+                            class="text-danger">Contatos</a></li>
+                </ul>
+            </div>
+
+            <div class="col-12">
+                <div class="social-row">
+                    <div class="soc-item">
+                        <a href="https://mobiri.se/" target="_blank">
+                            <span class="mbr-iconfont socicon socicon-facebook display-7"></span>
+                        </a>
+                    </div>
+                    <div class="soc-item">
+                        <a href="https://mobiri.se/" target="_blank">
+                            <span class="mbr-iconfont socicon-twitter socicon"></span>
+                        </a>
+                    </div>
+                    <div class="soc-item">
+                        <a href="https://mobiri.se/" target="_blank">
+                            <span class="mbr-iconfont socicon-instagram socicon"></span>
+                        </a>
+                    </div>
+                    <div class="soc-item">
+                        <a href="https://mobiri.se/" target="_blank">
+                            <span class="mbr-iconfont socicon-tiktok socicon"></span>
+                        </a>
+                    </div>
+                    <div class="soc-item">
+                        <a href="https://mobiri.se/" target="_blank">
+                            <span class="mbr-iconfont socicon-youtube socicon"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 mt-5">
+                <p class="mbr-fonts-style copyright display-7">
+                    © Copyright 2023 AC7- Todos os direitos reservados</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

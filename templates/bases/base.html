@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <link rel="shortcut icon" href="assets/images/logo.png" type="image/x-icon">
+    <meta name="description" content="">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    {% block 'title' %}{% endblock %}
+
+    <link rel="stylesheet" href="{% static 'geral/css/web/mobirise2.css' %}">
+    <link rel="stylesheet" href="{% static 'geral/css/animatecss/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'geral/css/dropdown/style.css' %}">
+    <link rel="stylesheet" href="{% static 'geral/css/socicon/css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'geral/css/theme/style.css' %}">
+    <link rel="stylesheet" href="{% static 'geral/css/main/style.css' %}">
+    <script src="{% static 'geral/js/main/script.js' %}"></script>
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap"
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap">
+    </noscript>
+    <link rel="preload" as="style" href="{% static 'geral/css/mobirise/mbr-additional.css' %}">
+    <link rel="stylesheet" href="{% static 'geral/css/mobirise/mbr-additional.css' %}" type="text/css">
+
+    {% block 'head' %}{% endblock %}
+
+</head>
+
+<body>
+    {% block 'body' %}{% endblock %}
+
+    <script src="{% static 'geral/js/smoothscroll/smooth-scroll.js' %}"></script>
+    <script src="{% static 'geral/js/ytplayer/index.js' %}"></script>
+    <script src="{% static 'geral/js/dropdown/navbar-dropdown.js' %}"></script>
+    <script src="{% static 'geral/js/theme/script.js' %}"></script>
+    <script src="{% static 'geral/js/formoid/formoid.min.js' %}"></script>
+
+
+    <input name="animation" type="hidden">
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+</body>

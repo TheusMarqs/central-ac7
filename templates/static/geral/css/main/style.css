@@ -1,107 +1,120 @@
 :root {
-  --transition-1: 0.25s ease-in-out;
-  --sizzling-sunrise: hsl(51, 95%, 54%);
+    --transition-1: 0.25s ease-in-out;
+    --sizzling-sunrise: hsl(51, 95%, 54%);
 }
 
 body.light_theme {
-  --color-primary: hsl(0, 0%, 100%);
-  --bg-primary: hsl(0, 0%, 90%);
-  --bg-secondary: hsl(0, 0%, 100%);
+    --color-primary: hsl(0, 0%, 100%);
+    --bg-primary: hsl(0, 0%, 90%);
+    --bg-secondary: hsl(0, 0%, 100%);
+    --bg-theme-btn: whitesmoke;
 }
 
 body.dark_theme {
-  --color-primary: hsl(0, 0%, 12%);
-  --bg-primary: hsl(0, 0%, 12%);
-  --bg-secondary: hsl(0, 0%, 19%);
+    --color-primary: hsl(0, 0%, 12%);
+    --bg-primary: hsl(0, 0%, 12%);
+    --bg-secondary: hsl(0, 0%, 19%);
+    --bg-theme-btn: hsl(0, 0%, 19%);
 }
 
 body {
-  background: var(--bg-primary);
-  transition: var(--transition-1);
+    background: var(--bg-primary);
+    transition: var(--transition-1);
 }
 
 .icons {
-  font-size: 30px;
-  cursor: pointer;
+    font-size: 30px;
+    cursor: pointer;
 }
 
 .icons:hover {
-  opacity: 80%;
+    opacity: 80%;
 }
 
 .icon-box .icons {
-  cursor: default;
+    cursor: default;
 }
 
 .icon-box .icons:hover {
-  opacity: 100%;
+    opacity: 100%;
 }
 
 @media (max-width: 992px) {
-  .icons {
-    display: none;
-  }
+    .icons {
+        display: none;
+    }
 }
+
 
 /* Sobre ac7 */
+
 .cid-tPQ9sLdeje.dark {
-  background-color: var(--dark-background) !important;
-  color: white !important;
+    background-color: var(--dark-background) !important;
+    color: white !important;
 }
+
 
 /* Serviços */
+
 .cid-tMlEXTHLbS.dark {
-  background-color: var(--dark-background2);
+    background-color: var(--dark-background2);
 }
+
 
 /* Form */
+
 .cid-tJS9pBcTSa.dark {
-  background-color: var(--dark-background);
-  color: white;
+    background-color: var(--dark-background);
+    color: white;
 }
+
 
 /* Contato */
+
 .cid-tLdYHD757A.dark {
-  background-color: rgba(0, 0, 0, 0.774);
+    background-color: rgba(0, 0, 0, 0.774);
 }
+
 
 /* Subtitulo contatos */
+
 .cid-tLdYHD757A.dark .mbr-section-head {
-  color: white;
+    color: white;
 }
 
+
 /* Rodapé */
+
 .cid-tJS9NNcTLZ.dark {
-  background-color: var(--dark-background2);
-  color: white;
+    background-color: var(--dark-background2);
+    color: white;
 }
 
 .item {
-  color: black;
+    color: black;
 }
 
 @media (max-width: 990px) {
-  #desktop-profile {
-    display: none;
-  }
-
-  #mobile-profile {
-    display: block;
-  }
+    #desktop-profile {
+        display: none;
+    }
+    #mobile-profile {
+        display: block;
+    }
 }
 
 @media (min-width: 991px) {
-  #mobile-profile {
-    display: none;
-  }
+    #mobile-profile {
+        display: none;
+    }
 }
 
 .theme-btn {
-  padding: 4px;
-  width: 48px;
-  background: var(--bg-secondary);
-  border-radius: 100px;
-  transition: var(--transition-1);
+    padding: 4px;
+    width: 48px;
+    background: var(--bg-theme-btn);
+    border-radius: 100px;
+    transition: var(--transition-1);
 }
 
 .theme-icon {
@@ -112,14 +125,10 @@ body {
     border-radius: 50px;
     box-shadow: inset 9px -6px var(--color-primary);
     transition: var(--transition-1);
+    display: block;
 }
 
 .theme-btn.active .theme-icon {
-  left: 20px;
-  box-shadow: inset 20px -20px var(--sizzling-sunrise);
-}
-
-.cid-tJS6tZXiPa {
-    transition: var(--transition-1);
-    display: flex;
+    left: 20px;
+    box-shadow: inset 20px -20px var(--sizzling-sunrise);
 }

@@ -1,4 +1,5 @@
 from django.db import models
+import os
 
 class Show(models.Model):
     artist = models.CharField(max_length=25, verbose_name='Nome do artista')

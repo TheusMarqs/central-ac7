@@ -11,12 +11,12 @@
         <div class="container">
             <div class="navbar-brand">
                 <span class="navbar-logo">
-                    <a href="https://mobirise.com">
+                    <a href="#">
                         <img src="assets/images/logo.png" style="height: 2.6rem;">
                     </a>
                 </span>
                 <span class="navbar-caption-wrap"><a class="navbar-caption text-black text-primary display-4"
-                        href="index.html#header05-1">AC7</a></span>
+                        href="{% url 'home' %}">AC7</a></span>
             </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-bs-toggle="collapse"
                 data-target="#navbarSupportedContent" data-bs-target="#navbarSupportedContent"
@@ -32,61 +32,67 @@
                 <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
 
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle link text-black display-4" href="#"
+                        <a class="nav-link dropdown-toggle link text-black btn-links" href="#"
                             id="navbarDropdownMenuLink">
                             Shows Musicais
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="{% url 'exibir_shows' %}">Todos os shows</a>
-                            <a class="dropdown-item" href="{% url 'exibir_shows' %}">Shows de Itu</a>
-                            <a class="dropdown-item" href="{% url 'exibir_shows' %}">Shows de Salto</a>
-                            <a class="dropdown-item" href="{% url 'exibir_shows' %}">Shows de Campinas</a>
+                            <a class="dropdown-item" href="{% url 'exibir_shows' %}">Itu</a>
+                            <a class="dropdown-item" href="{% url 'exibir_shows' %}">Salto</a>
+                            <a class="dropdown-item" href="{% url 'exibir_shows' %}">Campinas</a>
                         </div>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link link text-black display-4" href="{% url 'podcast' %}"
+                        <a class="nav-link link text-black btn-links" href="{% url 'podcast' %}"
                             aria-expanded="false">Podcasts</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link link text-black text-primary display-4"
-                            href="marketing.html">Marketing</a>
+                        <a class="nav-link link text-black btn-links"
+                            href="#">Marketing</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link link text-black text-primary display-4"
+                        <a class="nav-link link text-black btn-links"
                             href="index.html#contacts02-9">Contato</a>
                     </li>
                     <li id="mobile-profile" class="nav-item">
-                        <a class="nav-link link text-black text-primary display-4"
-                            href="index.html#contacts02-9">Meu perfil</a>
+                        <a class="nav-link link text-black btn-links"
+                            href="{% url 'login' %}">{% if user.is_authenticated %}Meu perfil{% else %}Entrar{% endif %}</a>
                     </li>
                 </ul>
 
                 <div>
-                    <button id="theme" class="theme-btn" aria-label="Change Theme" onclick="changeTheme()" title="Change Theme" data-theme-btn>
+                    <button class="theme-btn active" aria-label="Change Theme" onclick="changeTheme()" title="Change Theme" data-theme-btn>
                         <span class="theme-icon"></span>
                     </button>
                 </div>
 
+                {% if user.is_authenticated %}
                 <div id="desktop-profile" class="justify-content-end">
                     <div class="btn-group">
                         <button type="button" class="btn btn-link text-black text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                        <ion-icon class="icons" style="margin-bottom: -5px;" name="person-circle-outline"></ion-icon>
+                        <ion-icon class="icons me-1" name="person-circle-outline"></ion-icon>
                       {{ request.user | title }}
                     </button>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="">Meu perfil</a></li>
+                            <li><a class="dropdown-item" href="#"><ion-icon class="icons me-1" style="margin-bottom: -5px;" name="person-outline"></ion-icon>Meu perfil</a></li>
                             <li>
                                 <a class="dropdown-item" href="#">
                                     <ion-icon class="icons me-1" style="margin-bottom: -5px; margin-left: -2px;" name="lock-closed-outline"></ion-icon>Alterar senha</a>
                             </li>
                             <li>
-                                <a class="dropdown-item" href="">
+                                <a class="dropdown-item" href="{% url 'logout' %}">
                                     <ion-icon class="icons me-1" style="margin-bottom: -5px;" name="exit-outline"></ion-icon>Sair</a>
                             </li>
                         </ul>
                     </div>
                 </div>
+                {% else %}
+                <a href="{% url 'login' %}">
+                    <button id="desktop-profile" class="fs-5 me-5 ms-3 text-black">Entrar</button>
+                </a>
+                {% endif %}
             </div>
         </div>
     </nav>
@@ -99,11 +105,11 @@
     <div class="container">
         <div class="row">
             <div class="col-12 col-lg-5">
-                <h1 class="mbr-section-title mbr-fonts-style mb-3 display-1"><strong>Bem vindo à central
+                <h1 class="mbr-section-title mbr-fonts-style mb-3 display-1 text-black"><strong>Bem vindo à central
                         AC7!&nbsp;</strong>
                 </h1>
 
-                <p class="mbr-text mbr-fonts-style display-7">
+                <p class="mbr-text mbr-fonts-style display-7 text-black">
                     Fique a vontade para explorar todas as funcionalidades e serviços que oferecemos!</p>
             </div>
         </div>
@@ -131,7 +137,7 @@
                 </div>
             </div>
             <div class="col-12 col-lg-6">
-                <div class="item features-without-image active">
+                <div class="features-without-image active">
                     <div class="item-wrapper mbr-flex">
                         <div class="icon-box">
                             <ion-icon class="icons" style="color: white;" name="book-outline"></ion-icon>

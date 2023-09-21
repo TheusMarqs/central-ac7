@@ -4,22 +4,27 @@
 }
 
 body.light_theme {
-    --color-primary: hsl(0, 0%, 100%);
-    --bg-primary: hsl(0, 0%, 90%);
+    --color-primary: black;
+    --bg-primary: #F7F7F7;
     --bg-secondary: hsl(0, 0%, 100%);
+    --bg-terciary: whitesmoke;
     --bg-theme-btn: whitesmoke;
+    --bg-services: #2b7a69
 }
 
 body.dark_theme {
-    --color-primary: hsl(0, 0%, 12%);
+    --color-primary: white;
     --bg-primary: hsl(0, 0%, 12%);
     --bg-secondary: hsl(0, 0%, 19%);
+    --bg-terciary: hsl(0, 0%, 19%);
     --bg-theme-btn: hsl(0, 0%, 19%);
+    --bg-services: hsl(0, 0%, 12%);
 }
 
 body {
-    background: var(--bg-primary);
+    background: var(--bg-terciary);
     transition: var(--transition-1);
+    color: var(--color-primary);
 }
 
 .icons {
@@ -46,58 +51,12 @@ body {
 }
 
 
-/* Sobre ac7 */
-
-.cid-tPQ9sLdeje.dark {
-    background-color: var(--dark-background) !important;
-    color: white !important;
-}
-
-
-/* Serviços */
-
-.cid-tMlEXTHLbS.dark {
-    background-color: var(--dark-background2);
-}
-
-
-/* Form */
-
-.cid-tJS9pBcTSa.dark {
-    background-color: var(--dark-background);
-    color: white;
-}
-
-
-/* Contato */
-
-.cid-tLdYHD757A.dark {
-    background-color: rgba(0, 0, 0, 0.774);
-}
-
-
-/* Subtitulo contatos */
-
-.cid-tLdYHD757A.dark .mbr-section-head {
-    color: white;
-}
-
-
-/* Rodapé */
-
-.cid-tJS9NNcTLZ.dark {
-    background-color: var(--dark-background2);
-    color: white;
-}
-
-.item {
-    color: black;
-}
 
 @media (max-width: 990px) {
     #desktop-profile {
         display: none;
     }
+
     #mobile-profile {
         display: block;
     }
@@ -131,4 +90,64 @@ body {
 .theme-btn.active .theme-icon {
     left: 20px;
     box-shadow: inset 20px -20px var(--sizzling-sunrise);
+}
+
+.cid-tPQ9sLdeje {
+    background-color: var(--bg-secondary);
+}
+
+.cid-tMlEXTHLbS {
+    background-color: var(--bg-services);
+    color: black;
+}
+
+.cid-tJS9pBcTSa {
+    background-color: var(--bg-secondary);
+}
+
+.cid-tLdYHD757A {
+    background-color: var(--bg-secondary);
+}
+
+.cid-tJS9NNcTLZ {
+    background-color: var(--bg-services);
+}
+
+.btn-links {
+    font-size: 1.5em;
+}
+
+@media (min-width: 1200px) {
+    .btn-links {
+        font-size: 1.8em;
+    }
+}
+
+label {
+    margin-left: 20px;
+}
+
+.cid-tJS9NNcTLZ {
+    display: flex;
+    bottom: 0 !important;
+}
+
+.form-login {
+    background-color: var(--bg-theme-btn);
+}
+
+.card-txt {
+    color: black;
+}
+
+.cid-tQcZ7TJGNn {
+    background-color: var(--bg-secondary);
+}
+
+.cid-tQcXkuPmsA {
+    background-color: var(--bg-secondary);
+}
+
+.cid-tQcYAUOhvJ {
+    background-color: var(--bg-secondary);
 }

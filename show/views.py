@@ -9,6 +9,12 @@ def exibir_shows(request):
 
 class ShowCreate(CreateView):
     model = Show
-    fields = ['artist', 'value', 'description', 'date', 'image']
+    fields = ['artist', 'price', 'description', 'date', 'city', 'neighbourhood', 'street', 'cep', 'image']
+    template_name = 'cadastrar_shows.html'
+    success_url = reverse_lazy('exibir_shows')
+
+class ShowUpdate(UpdateView):
+    model = Show
+    fields = ['artist', 'price', 'description', 'date', 'city', 'neighbourhood', 'street', 'cep', 'image']
     template_name = 'cadastrar_shows.html'
     success_url = reverse_lazy('exibir_shows')

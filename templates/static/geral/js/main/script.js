@@ -1,9 +1,7 @@
 const elemToggleFunc = function(elem) { elem.classList.toggle("active"); }
 
-
-
 function changeTheme() {
-
+    
     const themeToggleBtn = document.querySelector("[data-theme-btn]");
 
     elemToggleFunc(themeToggleBtn);

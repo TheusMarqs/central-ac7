@@ -10,6 +10,7 @@ body.light_theme {
     --bg-terciary: whitesmoke;
     --bg-theme-btn: whitesmoke;
     --bg-services: #2b7a69
+    --color-crud-icons: black
 }
 
 body.dark_theme {
@@ -19,6 +20,7 @@ body.dark_theme {
     --bg-terciary: hsl(0, 0%, 19%);
     --bg-theme-btn: hsl(0, 0%, 19%);
     --bg-services: hsl(0, 0%, 12%);
+    --color-crud-icons: white
 }
 
 body {
@@ -150,4 +152,12 @@ label {
 
 .cid-tQcYAUOhvJ {
     background-color: var(--bg-secondary);
+}
+
+.cid-tJS9NNcTLZ .social-row .soc-item a .mbr-iconfont {
+    color: var(--bg-services);
+}
+
+.crud-icons{
+    color: var(--color-crud-icons) !important;
 }

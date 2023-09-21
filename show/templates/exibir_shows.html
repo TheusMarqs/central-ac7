@@ -133,45 +133,52 @@
             </h3>
 
         </div>
-        {% for show in shows %}
-        <a class="me-4" href="ingressos.html">
-            <div class="item features-image">
-                <div class="item-wrapper">
-                    <div class="row align-items-center">
-                        <div class="col-12 col-md-3">
-                            <div class="image-wrapper">
-                                <img src="../media/{{ show.image }}">
+        <div class="d-flex">
+            {% for show in shows %}
+            <a class="me-4" href="ingressos.html">
+                <div class="item features-image">
+                    <div class="item-wrapper">
+                        <div class="row align-items-center">
+                            <div class="col-12 col-md-3">
+                                <div class="image-wrapper">
+                                    <img src="../media/{{ show.image }}">
+                                </div>
                             </div>
-                        </div>
-                        
-                        <div class="col-12 col-md">
-                            <div class="card-box">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="top-line">
-                                            <h4 class="card-txt card-title mbr-fonts-style display-5"><strong>{{ show.artist | title }}</strong></h4>
-                                            <div>
-                                                <p class="card-txt cost mbr-fonts-style display-5">R${{ show.price }}</p>
-                                                <ion-icon class="icons text-black" name="create-outline"></ion-icon>
-                                                <ion-icon class="icons text-black" name="trash-outline"></ion-icon>
+                            
+                            <div class="col-12 col-md">
+                                <div class="card-box">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="top-line">
+                                                <h4 class="card-txt card-title mbr-fonts-style display-5"><strong>{{ show.artist | title }}</strong></h4>
+                                                <div>
+                                                    <p class="card-txt cost mbr-fonts-style display-5">R${{ show.price }}</p>
+                                                    
+                                                </div>
                                             </div>
+                                            
                                         </div>
-                                        
-                                    </div>
-                                    <div class="col-12 d-flex">
-                                        <div class="bottom-line">
-                                            <p class="card-txt mbr-text mbr-fonts-style m-0 display-7">{{ show.description | title}}</p>
+                                        <div class="col-12 d-flex">
+                                            <div class="bottom-line">
+                                                <p class="card-txt mbr-text mbr-fonts-style m-0 display-7">{{ show.description | title}}</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            
                         </div>
-                        
                     </div>
                 </div>
+            </a>
+            <div class="d-flex align-items-center">
+                <a class="crud-icons" href="{% url 'update_show' show.pk %}">
+                    <ion-icon class="icons crud-icons" name="create-outline"></ion-icon>
+                </a>
+                <ion-icon class="icons crud-icons" name="trash-outline"></ion-icon>
             </div>
-        </a>
-        {% endfor %}
+            {% endfor %}
+        </div>
     </div>
 </section>
 

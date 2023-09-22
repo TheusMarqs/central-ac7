@@ -18,3 +18,12 @@ class ShowUpdate(UpdateView):
     fields = ['artist', 'price', 'description', 'date', 'city', 'neighbourhood', 'street', 'cep', 'image']
     template_name = 'cadastrar_shows.html'
     success_url = reverse_lazy('exibir_shows')
+
+class ShowDelete(DeleteView):
+    model = Show
+    template_name = 'exibir_shows.html'
+    success_url = reverse_lazy('exibir_shows')
+
+def ingresso(request, id):
+    shows = Show.objects.filter(id=id)
+    return render(request, 'ingresso.html', {'shows': shows})

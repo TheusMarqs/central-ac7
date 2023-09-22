@@ -5,7 +5,106 @@
     {% block 'title' %}<title>Cadastrar Shows</title>{% endblock %}
 {% endblock %}
 {% block 'body' %}
-<div class="container-fluid" style="background-color: whitesmoke;">
+<section data-bs-version="5.1" class="menu menu2 cid-tJS6tZXiPa" once="menu" id="menu02-22">
+
+
+    <nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
+        <div class="container">
+            <div class="navbar-brand">
+                <span class="navbar-logo">
+                    <a href="https://mobirise.com">
+                        <img src="assets/images/logo.png" style="height: 2.6rem;">
+                    </a>
+                </span>
+                <span class="navbar-caption-wrap"><a class="navbar-caption text-black text-primary display-4"
+                        href="{% url 'home' %}">AC7</a></span>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-bs-toggle="collapse"
+                data-target="#navbarSupportedContent" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
+                    <li class="nav-item">
+                        <a class="nav-link link text-black text-primary btn-links" href="{% url 'home' %}">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle link text-black text-primary btn-links" href="#"
+                            id="navbarDropdownMenuLink">
+                            Shows Musicais
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="{% url 'exibir_shows' %}">Todos os shows</a>
+                            <a class="dropdown-item" href="{% url 'exibir_shows' %}">Itu</a>
+                            <a class="dropdown-item" href="{% url 'exibir_shows' %}">Salto</a>
+                            <a class="dropdown-item" href="{% url 'exibir_shows' %}">Campinas</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link link text-black text-primary btn-links" href="{% url 'podcast' %}"
+                            aria-expanded="false">Podcasts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link link text-black text-primary btn-links" href="#"
+                            aria-expanded="false">Marketing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link link text-black text-primary btn-links"
+                            href="{% url 'home' %}#contacts02-9">Contato</a>
+                    </li>
+                    <li id="mobile-profile" class="nav-item">
+                        <a class="nav-link link text-black btn-links"
+                            href="{% url 'login' %}">{% if user.is_authenticated %}Meu perfil{% else %}Entrar{% endif %}</a>
+                    </li>
+                </ul>
+
+                <div>
+                    <button class="theme-btn active" aria-label="Change Theme" onclick="changeTheme()" title="Change Theme" data-theme-btn>
+                        <span class="theme-icon"></span>
+                    </button>
+                </div>
+
+                {% if user.is_authenticated %}
+                <div id="desktop-profile">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-link text-black text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        <ion-icon class="icons me-1" name="person-circle-outline"></ion-icon>
+                      {{ request.user | title }}
+                    </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item ps-3" href="#"><ion-icon class="icons me-1" style="margin-bottom: -5px;" name="person-outline"></ion-icon>Meu perfil</a></li>
+                            <li>
+                                <a class="dropdown-item ps-3" href="#">
+                                    <ion-icon class="icons me-1" style="margin-bottom: -5px; margin-left: -2px;" name="lock-closed-outline"></ion-icon>Alterar senha</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item ps-4" href="{% url 'cadastrar_shows' %}">
+                                    <ion-icon class="icons me-1" style="margin-bottom: -5px; margin-left: -10px;" name="musical-notes-outline"></ion-icon>Novo Show</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item ps-3" href="{% url 'logout' %}">
+                                    <ion-icon class="icons me-1" style="margin-bottom: -5px;" name="exit-outline"></ion-icon>Sair</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                {% else %}
+                <a href="{% url 'login' %}">
+                    <button id="desktop-profile" class="fs-5 me-5 ms-3 text-black">Entrar</button>
+                </a>
+                {% endif %}
+            </div>
+            </div>
+        </div>
+    </nav>
+</section>
+<div class="container-fluid mb-5" style="margin-top: 120px" style="background-color: whitesmoke;">
     <div class="row justify-content-center">
         <div class="col-md-6">
             <div class="display-6 text-center mt-4 mb-3">
@@ -19,64 +118,4 @@
     </div>
 </div>
 
-<section data-bs-version="5.1" class="footer1 programm5 cid-tJS9NNcTLZ" once="footers" id="footer03-23">
-
-
-
-
-
-    <div class="container">
-        <div class="row">
-
-            <div class="row-links mb-4">
-                <ul class="header-menu">
-
-
-
-
-                    <li class="header-menu-item mbr-fonts-style display-5"><a href="index.html#features13-1v"
-                            class="text-danger">Sobre</a></li>
-                    <li class="header-menu-item mbr-fonts-style display-5"><a href="index.html#features04-w"
-                            class="text-danger text-primary">Serviços</a></li>
-                    <li class="header-menu-item mbr-fonts-style display-5"><a href="index.html#contacts02-9"
-                            class="text-danger">Contatos</a></li>
-                </ul>
-            </div>
-
-            <div class="col-12">
-                <div class="social-row">
-                    <div class="soc-item">
-                        <a href="https://mobiri.se/" target="_blank">
-                            <span class="mbr-iconfont socicon socicon-facebook display-7"></span>
-                        </a>
-                    </div>
-                    <div class="soc-item">
-                        <a href="https://mobiri.se/" target="_blank">
-                            <span class="mbr-iconfont socicon-twitter socicon"></span>
-                        </a>
-                    </div>
-                    <div class="soc-item">
-                        <a href="https://mobiri.se/" target="_blank">
-                            <span class="mbr-iconfont socicon-instagram socicon"></span>
-                        </a>
-                    </div>
-                    <div class="soc-item">
-                        <a href="https://mobiri.se/" target="_blank">
-                            <span class="mbr-iconfont socicon-tiktok socicon"></span>
-                        </a>
-                    </div>
-                    <div class="soc-item">
-                        <a href="https://mobiri.se/" target="_blank">
-                            <span class="mbr-iconfont socicon-youtube socicon"></span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 mt-5">
-                <p class="mbr-fonts-style copyright display-7">
-                    © Copyright 2023 AC7- Todos os direitos reservados</p>
-            </div>
-        </div>
-    </div>
-</section>
 {% endblock %}

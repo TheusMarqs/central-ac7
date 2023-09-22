@@ -8,9 +8,10 @@ body.light_theme {
     --bg-primary: #F7F7F7;
     --bg-secondary: hsl(0, 0%, 100%);
     --bg-terciary: whitesmoke;
-    --bg-theme-btn: whitesmoke;
-    --bg-services: #2b7a69
-    --color-crud-icons: black
+    --bg-theme-btn: white;
+    --bg-services: #2b7a69;
+    --bg-header: #F7F7F7;
+    --color-crud-icons: black;
 }
 
 body.dark_theme {
@@ -20,7 +21,8 @@ body.dark_theme {
     --bg-terciary: hsl(0, 0%, 19%);
     --bg-theme-btn: hsl(0, 0%, 19%);
     --bg-services: hsl(0, 0%, 12%);
-    --color-crud-icons: white
+    --bg-header: hsl(0, 0%, 31%);
+    --color-crud-icons: white;
 }
 
 body {
@@ -47,7 +49,7 @@ body {
 }
 
 @media (max-width: 992px) {
-    .icons {
+    .cid-tJS6tZXiPa .icons {
         display: none;
     }
 }
@@ -73,7 +75,7 @@ body {
 .theme-btn {
     padding: 4px;
     width: 48px;
-    background: var(--bg-theme-btn);
+    background: var(--bg-theme-btn) !important;
     border-radius: 100px;
     transition: var(--transition-1);
 }
@@ -135,7 +137,7 @@ label {
 }
 
 .form-login {
-    background-color: var(--bg-theme-btn);
+    background-color: var(--bg-terciary);
 }
 
 .card-txt {
@@ -160,4 +162,32 @@ label {
 
 .crud-icons{
     color: var(--color-crud-icons) !important;
+}
+
+.cid-tPVE67e4kU{
+    background-color: var(--bg-services) !important;
+}
+
+.cid-tPVEG1qAg0{
+    background-color: var(--bg-secondary) !important;
+}
+
+.cid-tPVE67e4kU .topbg {
+    background-color: var(--bg-secondary);
+}
+
+.cid-tQd3Fxn5iO {
+    background-color: var(--bg-secondary);
+}
+
+.cid-tJS6tZXiPa .container {
+    background-color: var(--bg-header);
+}
+
+.btn-header{
+    color: var(--color-primary) !important;
+}
+
+.dropdown-shows{
+    background-color: var(--bg-header) !important;
 }

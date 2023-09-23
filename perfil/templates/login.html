@@ -29,6 +29,11 @@
                     <span></span>
                 </div>
             </button>
+            <div class="me-3 mobile-profile">
+                <button class="theme-btn active" aria-label="Change Theme" onclick="changeTheme()" title="Change Theme" data-theme-btn>
+                    <span class="theme-icon"></span>
+                </button>
+            </div>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
 
@@ -37,11 +42,11 @@
                             id="navbarDropdownMenuLink">
                             Shows Musicais
                         </a>
-                        <div class="dropdown-menu dropdown-shows" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item btn-header" href="{% url 'exibir_shows' %}">Todos os shows</a>
-                            <a class="dropdown-item btn-header" href="{% url 'exibir_shows' %}">Shows de Itu</a>
-                            <a class="dropdown-item btn-header" href="{% url 'exibir_shows' %}">Shows de Salto</a>
-                            <a class="dropdown-item btn-header" href="{% url 'exibir_shows' %}">Shows de Campinas</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="{% url 'exibir_shows' %}">Todos os shows</a>
+                            <a class="dropdown-item" href="{% url 'filtrar_shows' 'itu' %}">Itu</a>
+                            <a class="dropdown-item" href="{% url 'filtrar_shows' 'salto' %}">Salto</a>
+                            <a class="dropdown-item" href="{% url 'filtrar_shows' 'campinas' %}">Campinas</a>
                         </div>
                     </li>
 
@@ -55,22 +60,22 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link link btn-header btn-links"
-                            href="index.html#contacts02-9">Contato</a>
+                            href="{% url 'home' %}#contacts02-9">Contato</a>
                     </li>
-                    <li id="mobile-profile" class="nav-item">
+                    <li class="nav-item mobile-profile">
                         <a class="nav-link link btn-header btn-links"
-                            href="index.html#contacts02-9">{% if user.is_authenticated %}Meu perfil{% else %}Entrar{% endif %}</a>
+                            href="{% url 'login' %}">{% if user.is_authenticated %}Meu perfil{% else %}Entrar{% endif %}</a>
                     </li>
                 </ul>
 
-                <div>
+                <div class="desktop-profile">
                     <button class="theme-btn active" aria-label="Change Theme" onclick="changeTheme()" title="Change Theme" data-theme-btn>
                         <span class="theme-icon"></span>
                     </button>
                 </div>
 
                 {% if user.is_authenticated %}
-                <div id="desktop-profile">
+                <div class="desktop-profile">
                     <div class="btn-group">
                         <button type="button" class="btn btn-link btn-header text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                         <ion-icon class="icons me-1" name="person-circle-outline"></ion-icon>
@@ -95,7 +100,7 @@
                 </div>
                 {% else %}
                 <a href="{% url 'login' %}">
-                    <button id="desktop-profile" class="fs-5 me-5 ms-3 btn-header">Entrar</button>
+                    <button class="fs-5 me-5 ms-3 btn-header desktop-profile">Entrar</button>
                 </a>
                 {% endif %}
             </div>

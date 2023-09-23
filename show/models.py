@@ -2,12 +2,18 @@ from django.db import models
 import os
 
 class Show(models.Model):
+    choice_city = (
+        ('Itu', 'Itu'),
+        ('Salto', 'Salto'),
+        ('Campinas', 'Campinas')
+    )
+
     artist = models.CharField(max_length=25, verbose_name='Nome do artista')
     price = models.FloatField(verbose_name='Valor do ingresso')
     date = models.DateField(verbose_name='Data do show')
     description = models.TextField(verbose_name='Descrição do show')
     image = models.ImageField(verbose_name='Imagem de capa', upload_to="img")
-    city = models.CharField(verbose_name='Cidade', max_length=20)
+    city = models.CharField(verbose_name='Cidade', choices=choice_city, max_length=15)
     neighbourhood = models.CharField(verbose_name='Bairro', max_length=25, null=True, blank=True)
     street = models.CharField(verbose_name='Rua', max_length=50, null=True, blank=True)
     cep = models.CharField(max_length=10, null=True, blank=True)

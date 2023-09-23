@@ -16,7 +16,7 @@
                         <img src="assets/images/logo.png" style="height: 2.6rem;">
                     </a>
                 </span>
-                <span class="navbar-caption-wrap"><a class="navbar-caption text-black text-primary display-4"
+                <span class="navbar-caption-wrap"><a class="navbar-caption btn-header display-4"
                         href="{% url 'home' %}">AC7</a></span>
             </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-bs-toggle="collapse"
@@ -29,51 +29,56 @@
                     <span></span>
                 </div>
             </button>
+            <div class="me-3 mobile-profile">
+                <button class="theme-btn active" aria-label="Change Theme" onclick="changeTheme()" title="Change Theme" data-theme-btn>
+                    <span class="theme-icon"></span>
+                </button>
+            </div>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
                     <li class="nav-item">
-                        <a class="nav-link link text-black text-primary btn-links" href="{% url 'home' %}">Home</a>
+                        <a class="nav-link link btn-header btn-links" href="{% url 'home' %}">Home</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle link text-black text-primary btn-links" href="#"
+                        <a class="nav-link dropdown-toggle link btn-header btn-links" href="#"
                             id="navbarDropdownMenuLink">
                             Shows Musicais
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="{% url 'exibir_shows' %}">Todos os shows</a>
-                            <a class="dropdown-item" href="{% url 'exibir_shows' %}">Itu</a>
-                            <a class="dropdown-item" href="{% url 'exibir_shows' %}">Salto</a>
-                            <a class="dropdown-item" href="{% url 'exibir_shows' %}">Campinas</a>
+                            <a class="dropdown-item" href="{% url 'filtrar_shows' 'itu' %}">Itu</a>
+                            <a class="dropdown-item" href="{% url 'filtrar_shows' 'salto' %}">Salto</a>
+                            <a class="dropdown-item" href="{% url 'filtrar_shows' 'campinas' %}">Campinas</a>
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link link text-black text-primary btn-links" href="{% url 'podcast' %}"
+                        <a class="nav-link link btn-header btn-links" href="{% url 'podcast' %}"
                             aria-expanded="false">Podcasts</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link link text-black text-primary btn-links" href="#"
+                        <a class="nav-link link btn-header btn-links" href="#"
                             aria-expanded="false">Marketing</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link link text-black text-primary btn-links"
+                        <a class="nav-link link btn-header btn-links"
                             href="{% url 'home' %}#contacts02-9">Contato</a>
                     </li>
-                    <li id="mobile-profile" class="nav-item">
-                        <a class="nav-link link text-black btn-links"
+                    <li class="nav-item mobile-profile">
+                        <a class="nav-link link btn-header btn-links"
                             href="{% url 'login' %}">{% if user.is_authenticated %}Meu perfil{% else %}Entrar{% endif %}</a>
                     </li>
                 </ul>
 
-                <div>
+                <div class="desktop-profile">
                     <button class="theme-btn active" aria-label="Change Theme" onclick="changeTheme()" title="Change Theme" data-theme-btn>
                         <span class="theme-icon"></span>
                     </button>
                 </div>
 
                 {% if user.is_authenticated %}
-                <div id="desktop-profile">
+                <div class="desktop-profile">
                     <div class="btn-group">
-                        <button type="button" class="btn btn-link text-black text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        <button type="button" class="btn btn-link btn-header text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                         <ion-icon class="icons me-1" name="person-circle-outline"></ion-icon>
                       {{ request.user | title }}
                     </button>

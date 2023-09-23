@@ -26,4 +26,10 @@ class ShowDelete(DeleteView):
 
 def ingresso(request, id):
     shows = Show.objects.filter(id=id)
-    return render(request, 'ingresso.html', {'shows': shows})
+    for show in shows:
+        artist = show.artist
+    return render(request, 'ingresso.html', {'shows': shows, 'artist': artist})
+
+def filtrar_shows(request, city):
+    shows = Show.objects.filter(city=city)
+    return render(request, 'exibir_shows.html', {'shows':shows})

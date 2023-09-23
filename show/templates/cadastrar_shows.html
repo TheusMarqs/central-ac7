@@ -44,11 +44,11 @@
                             id="navbarDropdownMenuLink">
                             Shows Musicais
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="{% url 'exibir_shows' %}">Todos os shows</a>
-                            <a class="dropdown-item" href="{% url 'filtrar_shows' 'itu' %}">Itu</a>
-                            <a class="dropdown-item" href="{% url 'filtrar_shows' 'salto' %}">Salto</a>
-                            <a class="dropdown-item" href="{% url 'filtrar_shows' 'campinas' %}">Campinas</a>
+                        <div class="dropdown-menu dropdown-shows shadow" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item btn-header" href="{% url 'exibir_shows' %}">Todos os shows</a>
+                            <a class="dropdown-item btn-header" href="{% url 'filtrar_shows' 'itu' %}">Itu</a>
+                            <a class="dropdown-item btn-header" href="{% url 'filtrar_shows' 'salto' %}">Salto</a>
+                            <a class="dropdown-item btn-header" href="{% url 'filtrar_shows' 'campinas' %}">Campinas</a>
                         </div>
                     </li>
                     <li class="nav-item">
@@ -56,7 +56,7 @@
                             aria-expanded="false">Podcasts</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link link btn-header btn-links" href="#"
+                        <a class="nav-link link btn-header btn-links" href="{% url 'publicidade' %}"
                             aria-expanded="false">Marketing</a>
                     </li>
                     <li class="nav-item">
@@ -112,7 +112,7 @@
 <div class="container-fluid mb-5" style="margin-top: 120px" style="background-color: whitesmoke;">
     <div class="row justify-content-center">
         <div class="col-md-6">
-            <div class="display-6 text-center mt-4 mb-3">
+            <div class="display-6 text-center mt-4 mb-4">
                 Cadastrar Shows
             </div>
             <form method="post" enctype="multipart/form-data">

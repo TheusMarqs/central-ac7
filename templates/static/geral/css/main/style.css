@@ -8,6 +8,7 @@ body.light_theme {
     --bg-primary: #F7F7F7;
     --bg-secondary: hsl(0, 0%, 100%);
     --bg-terciary: whitesmoke;
+    --bg-quartenary: #EDEFEB;
     --bg-theme-btn: white;
     --bg-services: #2b7a69;
     --bg-header: #F7F7F7;
@@ -20,6 +21,7 @@ body.dark_theme {
     --bg-primary: hsl(0, 0%, 12%);
     --bg-secondary: hsl(0, 0%, 19%);
     --bg-terciary: hsl(0, 0%, 19%);
+    --bg-quartenary: hsl(0, 0%, 19%);
     --bg-theme-btn: hsl(0, 0%, 19%);
     --bg-services: hsl(0, 0%, 12%);
     --bg-header: hsl(0, 0%, 31%);
@@ -133,6 +135,25 @@ label {
     margin-left: 20px;
 }
 
+.passwordinput {
+    margin-bottom: 12px !important;
+}
+
+#hint_id_password1 {
+    color: var(--color-primary) !important;
+    opacity: 70%;
+}
+
+#hint_id_username {
+    color: var(--color-primary) !important;
+    opacity: 70%;
+}
+
+#hint_id_password2 {
+    color: var(--color-primary) !important;
+    opacity: 70%;
+}
+
 .cid-tJS9NNcTLZ {
     display: flex;
     bottom: 0 !important;
@@ -201,4 +222,20 @@ label {
 .alert.alert-danger {
     background-color: #dc3545 !important;
     color: white !important;
+}
+
+.cid-tQiZwKdxH7{
+    background-color: var(--bg-quartenary) !important;
+}
+
+.cid-tQj1MWTTwS{
+    background-color: var(--bg-quartenary) !important;
+}
+
+.cid-tQj5WmtEmK{
+    background-color: var(--bg-header);
+}
+
+.cid-tQjeqrFqk1{
+    background-color: var(--bg-header);
 }

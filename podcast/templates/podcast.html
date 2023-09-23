@@ -43,15 +43,15 @@
                         <a class="nav-link dropdown-toggle link btn-header display-4" href="#" id="navbarDropdownMenuLink">
                             Shows Musicais
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="{% url 'exibir_shows' %}">Todos os shows</a>
-                            <a class="dropdown-item" href="{% url 'filtrar_shows' 'itu' %}">Itu</a>
-                            <a class="dropdown-item" href="{% url 'filtrar_shows' 'salto' %}">Salto</a>
-                            <a class="dropdown-item" href="{% url 'filtrar_shows' 'campinas' %}">Campinas</a>
+                        <div class="dropdown-menu dropdown-shows shadow" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item btn-header" href="{% url 'exibir_shows' %}">Todos os shows</a>
+                            <a class="dropdown-item btn-header" href="{% url 'filtrar_shows' 'itu' %}">Itu</a>
+                            <a class="dropdown-item btn-header" href="{% url 'filtrar_shows' 'salto' %}">Salto</a>
+                            <a class="dropdown-item btn-header" href="{% url 'filtrar_shows' 'campinas' %}">Campinas</a>
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link link btn-header display-4" href="#"
+                        <a class="nav-link link btn-header display-4" href="{% url 'publicidade' %}"
                             aria-expanded="false">Marketing</a>
                     </li>
                     <li class="nav-item">
@@ -203,7 +203,7 @@
                     <div class="hoursCountdown col-xs-3 col-sm-3 col-md-3" title="Hours"></div>
                     <div class="minutesCountdown col-xs-3 col-sm-3 col-md-3" title="Minutes"></div>
                     <div class="secondsCountdown col-xs-3 col-sm-3 col-md-3" title="Seconds"></div>
-                    <div class="countdown" data-due-date="2023/09/19"></div>
+                    <div class="countdown" data-due-date="2023/09/25"></div>
                 </div>
 
 

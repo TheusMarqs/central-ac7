@@ -2,6 +2,9 @@ from django.shortcuts import render
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from .models import Show
 from django.urls import reverse_lazy
+from .forms import ShowForm
+from django.utils import timezone
+import datetime
 
 def exibir_shows(request):
     shows = Show.objects.all()
@@ -9,13 +12,14 @@ def exibir_shows(request):
 
 class ShowCreate(CreateView):
     model = Show
-    fields = ['artist', 'price', 'description', 'date', 'city', 'neighbourhood', 'street', 'cep', 'image']
+    form_class = ShowForm
     template_name = 'cadastrar_shows.html'
     success_url = reverse_lazy('exibir_shows')
 
+
 class ShowUpdate(UpdateView):
     model = Show
-    fields = ['artist', 'price', 'description', 'date', 'city', 'neighbourhood', 'street', 'cep', 'image']
+    form_class = ShowForm
     template_name = 'cadastrar_shows.html'
     success_url = reverse_lazy('exibir_shows')
 
@@ -31,5 +35,5 @@ def ingresso(request, id):
     return render(request, 'ingresso.html', {'shows': shows, 'artist': artist})
 
 def filtrar_shows(request, city):
-    shows = Show.objects.filter(city=city)
+    shows = Show.objects.filter(city__icontains=city)
     return render(request, 'exibir_shows.html', {'shows':shows})

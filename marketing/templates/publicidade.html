@@ -1,0 +1,260 @@
+{% extends 'bases/base.html' %}
+{% load static %}
+{% block 'head' %}
+    {% block 'title' %}<title>Marketing</title>{% endblock %}
+{% endblock %}
+{% block 'body' %}
+<section data-bs-version="5.1" class="menu menu2 cid-tJS6tZXiPa" once="menu" id="menu02-1w">
+
+
+    <nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
+        <div class="container">
+            <div class="navbar-brand">
+                <span class="navbar-logo">
+                    <a href="#">
+                        <img src="assets/images/logo.png" style="height: 2.6rem;">
+                    </a>
+                </span>
+                <span class="navbar-caption-wrap"><a class="navbar-caption btn-header display-4"
+                        href="{% url 'home' %}">AC7</a></span>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-bs-toggle="collapse"
+                data-target="#navbarSupportedContent" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+            <div class="me-3 mobile-profile">
+                <button class="theme-btn active" aria-label="Change Theme" onclick="changeTheme()" title="Change Theme" data-theme-btn>
+                    <span class="theme-icon"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
+                    <li class="nav-item">
+                        <a class="nav-link link btn-header display-4" href="{% url 'home' %}"
+                            aria-expanded="false">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle link btn-header display-4" href="#" id="navbarDropdownMenuLink">
+                            Shows Musicais
+                        </a>
+                        <div class="dropdown-menu dropdown-shows shadow" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item btn-header" href="{% url 'exibir_shows' %}">Todos os shows</a>
+                            <a class="dropdown-item btn-header" href="{% url 'filtrar_shows' 'itu' %}">Itu</a>
+                            <a class="dropdown-item btn-header" href="{% url 'filtrar_shows' 'salto' %}">Salto</a>
+                            <a class="dropdown-item btn-header" href="{% url 'filtrar_shows' 'campinas' %}">Campinas</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link link btn-header display-4" href="{% url 'podcast' %}"
+                            aria-expanded="false">Podcasts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link link btn-header display-4"
+                            href="{% url 'home' %}#contacts02-9">Contato</a>
+                    </li>
+                    <li class="nav-item mobile-profile">
+                        <a class="nav-link link btn-header btn-links"
+                            href="{% url 'login' %}">{% if user.is_authenticated %}Meu perfil{% else %}Entrar{% endif %}</a>
+                    </li>
+                </ul>
+                <div class="desktop-profile">
+                    <button class="theme-btn active" aria-label="Change Theme" onclick="changeTheme()" title="Change Theme" data-theme-btn>
+                        <span class="theme-icon"></span>
+                    </button>
+                </div>
+
+                {% if user.is_authenticated %}
+                <div class="desktop-profile">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-link btn-header text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        <ion-icon class="icons me-1" name="person-circle-outline"></ion-icon>
+                      {{ request.user | title }}
+                    </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item ps-3" href="#"><ion-icon class="icons me-1" style="margin-bottom: -5px;" name="person-outline"></ion-icon>Meu perfil</a></li>
+                            <li>
+                                <a class="dropdown-item ps-3" href="#">
+                                    <ion-icon class="icons me-1" style="margin-bottom: -5px; margin-left: -2px;" name="lock-closed-outline"></ion-icon>Alterar senha</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item ps-4" href="{% url 'cadastrar_shows' %}">
+                                    <ion-icon class="icons me-1" style="margin-bottom: -5px; margin-left: -10px;" name="musical-notes-outline"></ion-icon>Novo Show</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item ps-3" href="{% url 'logout' %}">
+                                    <ion-icon class="icons me-1" style="margin-bottom: -5px;" name="exit-outline"></ion-icon>Sair</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                {% else %}
+                <a href="{% url 'login' %}">
+                    <button class="fs-5 me-5 ms-3 btn-header desktop-profile">Entrar</button>
+                </a>
+                {% endif %}
+            </div>
+        </div>
+    </nav>
+</section>
+
+<section data-bs-version="5.1" class="header1 cid-tQiZwKdxH7" id="header01-2i">
+
+
+
+
+
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-12 col-lg-7 image-wrapper">
+                <img class="w-100" src="assets/images/8.jpg" alt="Mobirise Website Builder">
+            </div>
+            <div class="col-12 col-lg col-md-12">
+                <div class="text-wrapper align-left">
+                    <h1 class="mbr-fonts-style mb-4 display-2"><strong>Precisa se divulgar ou
+                            divulgar sua empresa?</strong></h1>
+                    <p class="mbr-fonts-style mb-4 display-7">Você chegou ao lugar certo! Desenvolvemos
+                        websites e cuidamos de todas as suas redes sociais.</p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="features25 cid-tQj1MWTTwS" id="features1-2k">
+
+
+
+
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-12">
+                <h3 class="mbr-section-title mbr-fonts-style align-center mb-2 display-2">
+                    <strong>Características</strong>
+                </h3>
+
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="item features-without-image mb-5 col-12 col-md-3 active">
+                <div class="item-wrapper align-center">
+                    <div class="iconfont-wrapper">
+                        <span class="mbr-iconfont mobi-mbri-code mobi-mbri"></span>
+                    </div>
+                    <h5 class="card-title mbr-fonts-style display-7"><strong>Responsividade</strong></h5>
+                    <p class="card-text mbr-fonts-style mb-0 display-7">Websites totalmente responsivos para todas
+                        as telas, sendo desktops, notebooks, tablets e celulares!</p>
+                </div>
+            </div>
+            <div class="item features-without-image mb-5 col-12 col-md-3">
+                <div class="item-wrapper align-center">
+                    <div class="card-box">
+                        <div class="iconfont-wrapper">
+                            <span class="mbr-iconfont mobi-mbri-website-theme-2 mobi-mbri"></span>
+                        </div>
+                        <h5 class="card-title mbr-fonts-style display-7"><strong>Suporte</strong></h5>
+                        <p class="card-text mbr-fonts-style mb-0 display-7">Após a entrega do site, continuamos
+                            dando suporte a ele e mantemos contato para possíveis atualizações.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="item features-without-image mb-5 col-12 col-md-3">
+                <div class="item-wrapper align-center">
+                    <div class="card-box">
+                        <div class="iconfont-wrapper">
+                            <span class="mbr-iconfont mobi-mbri-website-theme-2 mobi-mbri"></span>
+                        </div>
+                        <h5 class="card-title mbr-fonts-style display-7"><strong>Postagens frequentes</strong></h5>
+                        <p class="card-text mbr-fonts-style mb-0 display-7">Fazemos postagens frequentes em suas
+                            redes sociais, com publicações que realmente funcionam para atrair o público!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="item features-without-image mb-5 col-12 col-md-3">
+                <div class="item-wrapper align-center">
+                    <div class="iconfont-wrapper">
+                        <span class="mbr-iconfont mobi-mbri-responsive-2 mobi-mbri"></span>
+                    </div>
+                    <h5 class="card-title mbr-fonts-style display-7"><strong>Cliente em primeiro</strong></h5>
+                    <p class="card-text mbr-fonts-style mb-0 display-7">Levamos sempre as ideias do cliente como
+                        prioridade, atendendo aos requisitos e designs necessários.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="gallery1 cid-tQjeqrFqk1" id="gallery1-2o">
+
+
+    <div class="container">
+
+        <div class="row mt-4">
+
+
+
+            <div class="features-image сol-12 col-md-6 col-lg-12 active">
+                <div class="item-wrapper">
+                    <div class="item-img">
+                        <img src="assets/images/features4.jpg" alt="Mobirise Website Builder" title="">
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="content13 cid-tQj5WmtEmK" id="content13-2l">
+
+
+
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12 col-lg-10">
+                <h3 class="mbr-section-title mbr-fonts-style mb-4 display-5">
+                    <strong>Perguntas frequentes</strong>
+                </h3>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-12 col-lg-10">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-lg-6">
+                        <ul class="list mbr-fonts-style display-7">
+                            <li><strong>Qual o tempo de desenvolvimento do site?</strong><br>Depende muito dos
+                                requisitos do
+                                cliente, mas normalmente desenvolvemos em tempos recorde.</li>
+                            <li><strong>Fazemos somente serviços para empresas?</strong><br>Não, também oferecemos
+                                tudo isso para pessoas físicas, abrangendo todo o público.</li>
+                            <li><strong>Para qual ramo fazemos esses serviços?</strong><br>Qualquer tipo de ramo!
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <ul class="list mbr-fonts-style display-7">
+                            <li><strong>Por que preciso disso?
+                                </strong><br>Se você quer se promover ou promover sua empresa, as melhores formas
+                                são essas, utilizando websites e midias sociais, porém, dá muito trabalho cuidar
+                                disso tudo sozinho, então deixe com a gente!</li>
+                            <li><strong>Preciso entender do assunto para isso?<br></strong>Não, atendemos sempre os
+                                clientes da melhor forma possível e auxiliamos para o fácil entendimento, não se
+                                preocupe!</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

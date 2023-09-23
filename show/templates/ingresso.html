@@ -43,11 +43,11 @@
                             id="navbarDropdownMenuLink">
                             Shows Musicais
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="{% url 'exibir_shows' %}">Todos os shows</a>
-                            <a class="dropdown-item" href="{% url 'filtrar_shows' 'itu' %}">Itu</a>
-                            <a class="dropdown-item" href="{% url 'filtrar_shows' 'salto' %}">Salto</a>
-                            <a class="dropdown-item" href="{% url 'filtrar_shows' 'campinas' %}">Campinas</a>
+                        <div class="dropdown-menu dropdown-shows shadow" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item btn-header" href="{% url 'exibir_shows' %}">Todos os shows</a>
+                            <a class="dropdown-item btn-header" href="{% url 'filtrar_shows' 'itu' %}">Itu</a>
+                            <a class="dropdown-item btn-header" href="{% url 'filtrar_shows' 'salto' %}">Salto</a>
+                            <a class="dropdown-item btn-header" href="{% url 'filtrar_shows' 'campinas' %}">Campinas</a>
                         </div>
                     </li>
                     <li class="nav-item">
@@ -55,7 +55,7 @@
                             aria-expanded="false">Podcasts</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link link btn-header btn-links" href="#"
+                        <a class="nav-link link btn-header btn-links" href="{% url 'publicidade' %}"
                             aria-expanded="false">Marketing</a>
                     </li>
                     <li class="nav-item">
@@ -121,7 +121,7 @@
         <div class="carousel-inner">
             <div class="carousel-item slider-image item active">
                 <div class="item-wrapper">
-                    <img class="d-block w-100" src="assets/images/background3.jpg" alt="Mobirise Website Builder">
+                    <img class="d-block w-100" src="assets/images/background3.jpg">
 
                     <div class="carousel-caption">
                         <h5 class="mbr-section-subtitle mbr-fonts-style display-5 text-black">
@@ -134,7 +134,7 @@
             </div>
             <div class="carousel-item slider-image item">
                 <div class="item-wrapper">
-                    <img class="d-block w-100" src="assets/images/background5.jpg" alt="Mobirise Website Builder">
+                    <img class="d-block w-100" src="assets/images/background5.jpg">
 
                     <div class="carousel-caption">
                         <h5 class="mbr-section-subtitle mbr-fonts-style display-5">
@@ -197,7 +197,7 @@
                         </h5>
 
                         <ul>
-                            <li class="mbr-fonts-style display-7 text-black"><strong>Data:</strong> {{ show.date | date:'d/m/Y' }}</li>
+                            <li class="mbr-fonts-style display-7 text-black"><strong>Data:</strong> {{ show.datetime }}</li>
                             <li class="mbr-fonts-style display-7 text-black"><strong>Cidade:</strong> {{ show.city | title }}</li>
                             <li class="mbr-fonts-style display-7 text-black"><strong>Bairro:</strong> {{ show.neighbourhood | title }}</li>
                             <li class="mbr-fonts-style display-7 text-black"><strong>Rua:</strong> {{ show.street | title }}</li>

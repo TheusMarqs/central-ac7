@@ -10,4 +10,5 @@ urlpatterns = [
     path('perfil/', include('perfil.urls')),
     path('podcast/', include('podcast.urls')),
     path('show/', include('show.urls')),
+    path('marketing/', include('marketing.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

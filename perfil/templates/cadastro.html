@@ -63,8 +63,11 @@
                             href="{% url 'home' %}#contacts02-9">Contato</a>
                     </li>
                     <li class="nav-item mobile-profile">
-                        <a class="nav-link link btn-header btn-links"
-                            href="{% url 'login' %}">{% if user.is_authenticated %}Meu perfil{% else %}Entrar{% endif %}</a>
+                        {% if user.is_authenticated %}
+                            <a class="nav-link link btn-header btn-links" href="{% url 'meu_perfil' %}">Meu perfil</a>
+                        {% else %}
+                            <a class="nav-link link btn-header btn-links" href="{% url 'login' %}">Entrar</a>
+                        {% endif %}
                     </li>
                 </ul>
 
@@ -75,18 +78,15 @@
                 </div>
 
                 {% if user.is_authenticated %}
-                <div class="desktop-profile">
+                <div class="desktop-profile me-3">
                     <div class="btn-group">
                         <button type="button" class="btn btn-link btn-header text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                         <ion-icon class="icons me-1" name="person-circle-outline"></ion-icon>
-                      {{ request.user | title }}
+                      {{ request.user }}
                     </button>
-                        <ul class="dropdown-menu">
+                        <ul class="dropdown-menu mt-3">
                             <li><a class="dropdown-item ps-3" href="#"><ion-icon class="icons me-1" style="margin-bottom: -5px;" name="person-outline"></ion-icon>Meu perfil</a></li>
-                            <li>
-                                <a class="dropdown-item ps-3" href="#">
-                                    <ion-icon class="icons me-1" style="margin-bottom: -5px; margin-left: -2px;" name="lock-closed-outline"></ion-icon>Alterar senha</a>
-                            </li>
+                            
                             <li>
                                 <a class="dropdown-item ps-4" href="{% url 'cadastrar_shows' %}">
                                     <ion-icon class="icons me-1" style="margin-bottom: -5px; margin-left: -10px;" name="musical-notes-outline"></ion-icon>Novo Show</a>
@@ -108,14 +108,14 @@
     </nav>
 </section>
 
-<div class="container-fluid" style="margin-top: 8rem">
+<div class="container-fluid" style="margin-top: 6rem">
     <div class="row">
         <div class="display-6 text-center mt-5 mb-4">Cadastro</div>
         <div class="col-md-5 m-auto justify-content-center">
             <form method="post">
                 {% csrf_token %}
                 {{ form|crispy }}
-                <button class="btn btn-sm btn-success rounded-pill mb-5" type="submit">Cadastrar</button>
+                <button class="btn btn-md padding-btn btn-success rounded-pill mb-5" type="submit">Cadastrar</button>
                 <div class="float-end d-flex mt-2">
                     <p class="me-3 mt-3">Já possui uma conta?</p>
                     <a class="me-2 mt-3" href="{% url 'login' %}">

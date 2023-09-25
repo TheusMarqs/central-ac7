@@ -15,3 +15,5 @@ class UsuarioForm(UserCreationForm):
         # Adicione autocomplete="off" aos campos de entrada
         self.fields['username'].widget.attrs.update({'autocomplete': 'off'})
         self.fields['email'].widget.attrs.update({'autocomplete': 'off'})
+
+        self.fields['username'].help_text = 'Nome de usuário precisa conter entre 6 e 15 caracteres.'

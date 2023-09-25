@@ -1,10 +1,5 @@
-{% extends 'bases/base.html' %}
-{% load static %}
-{% load crispy_forms_tags %}
-{% block 'head' %}
-    {% block 'title' %}<title>Cadastrar Shows</title>{% endblock %}
-{% endblock %}
-{% block 'body' %}
+{% extends 'bases/base.html' %} {% load static %} {% block 'head' %} {% block 'title' %}
+<title>Meu perfil</title>{% endblock %} {% endblock %} {% block 'body' %}
 <section data-bs-version="5.1" class="menu menu2 cid-tJS6tZXiPa" once="menu" id="menu02-22">
 
 
@@ -19,9 +14,7 @@
                 <span class="navbar-caption-wrap"><a class="navbar-caption btn-header display-4"
                         href="{% url 'home' %}">AC7</a></span>
             </div>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-bs-toggle="collapse"
-                data-target="#navbarSupportedContent" data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbarSupportedContent" data-bs-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <div class="hamburger">
                     <span></span>
                     <span></span>
@@ -40,8 +33,7 @@
                         <a class="nav-link link btn-header btn-links" href="{% url 'home' %}">Home</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle link btn-header btn-links" href="#"
-                            id="navbarDropdownMenuLink">
+                        <a class="nav-link dropdown-toggle link btn-header btn-links" href="#" id="navbarDropdownMenuLink">
                             Shows Musicais
                         </a>
                         <div class="dropdown-menu dropdown-shows shadow" aria-labelledby="navbarDropdownMenuLink">
@@ -52,16 +44,13 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link link btn-header btn-links" href="{% url 'podcast' %}"
-                            aria-expanded="false">Podcasts</a>
+                        <a class="nav-link link btn-header btn-links" href="{% url 'podcast' %}" aria-expanded="false">Podcasts</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link link btn-header btn-links" href="{% url 'publicidade' %}"
-                            aria-expanded="false">Marketing</a>
+                        <a class="nav-link link btn-header btn-links" href="{% url 'publicidade' %}" aria-expanded="false">Marketing</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link link btn-header btn-links"
-                            href="{% url 'home' %}#contacts02-9">Contato</a>
+                        <a class="nav-link link btn-header btn-links" href="{% url 'home' %}#contacts02-9">Contato</a>
                     </li>
                     <li class="nav-item mobile-profile">
                         {% if user.is_authenticated %}
@@ -86,8 +75,11 @@
                       {{ request.user }}
                     </button>
                         <ul class="dropdown-menu mt-3">
-                            <li><a class="dropdown-item ps-3" href="#"><ion-icon class="icons me-1" style="margin-bottom: -5px;" name="person-outline"></ion-icon>Meu perfil</a></li>
-                            
+                            <li>
+                                <a class="dropdown-item ps-3" href="#">
+                                    <ion-icon class="icons me-1" style="margin-bottom: -5px;" name="person-outline"></ion-icon>Meu perfil</a>
+                            </li>
+
                             <li>
                                 <a class="dropdown-item ps-4" href="{% url 'cadastrar_shows' %}">
                                     <ion-icon class="icons me-1" style="margin-bottom: -5px; margin-left: -10px;" name="musical-notes-outline"></ion-icon>Novo Show</a>
@@ -101,26 +93,25 @@
                 </div>
                 {% else %}
                 <a href="{% url 'login' %}">
-                    <button id="desktop-profile" class="fs-5 me-5 ms-3 text-black">Entrar</button>
+                    <button class="fs-5 me-5 ms-3 btn-header desktop-profile">Entrar</button>
                 </a>
                 {% endif %}
-            </div>
             </div>
         </div>
     </nav>
 </section>
-<div class="container-fluid mb-5" style="margin-top: 120px" style="background-color: whitesmoke;">
-    <div class="row justify-content-center">
+<div class="container-fluid mb-5" style="margin-top: 140px">
+    <div class="row">
+        <div class="col-md-2"></div>
         <div class="col-md-6">
-            <div class="display-6 text-center mt-4 mb-4">
-                Cadastrar Shows
+            <div class="display-7 mt-4 mb-4">
+                <p class="pb-3">Usuário: {{ request.user }}</p>
+                <p>Email: {{ request.user.email }}</p>
+                <p>Senha: ******** <a href="{% url 'alterar_senha' %}"><button class="btn btn-sm btn-secondary">Alterar senha</button></a></p>
             </div>
-            <form method="post" enctype="multipart/form-data">
-                {% csrf_token %} {{ form|crispy }}
-                <button type="submit" class="btn padding-btn btn-success mt-3 mb-4 rounded-pill display-7">Cadastrar</button>
-            </form>
+
+
         </div>
     </div>
 </div>
-
 {% endblock %}

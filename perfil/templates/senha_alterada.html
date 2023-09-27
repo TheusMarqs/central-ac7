@@ -1,0 +1,125 @@
+{% extends 'bases/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block 'head' %}
+    {% block 'title'%}<title>Alterar senha</title>{% endblock %}
+{% endblock %}
+{% block 'body' %}
+<section data-bs-version="5.1" class="menu menu2 cid-tJS6tZXiPa" once="menu" id="menu02-22">
+
+
+    <nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
+        <div class="container">
+            <div class="navbar-brand">
+                <span class="navbar-logo">
+                    <a href="https://mobirise.com">
+                        <img src="assets/images/logo.png" style="height: 2.6rem;">
+                    </a>
+                </span>
+                <span class="navbar-caption-wrap"><a class="navbar-caption btn-header display-4"
+                        href="{% url 'home' %}">AC7</a></span>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-bs-toggle="collapse"
+                data-target="#navbarSupportedContent" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+            <div class="me-3 mobile-profile">
+                <button class="theme-btn active" aria-label="Change Theme" onclick="changeTheme()" title="Change Theme" data-theme-btn>
+                    <span class="theme-icon"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
+                    <li class="nav-item">
+                        <a class="nav-link link btn-header btn-links" href="{% url 'home' %}">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle link btn-header btn-links" href="#"
+                            id="navbarDropdownMenuLink">
+                            Shows Musicais
+                        </a>
+                        <div class="dropdown-menu dropdown-shows shadow" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item btn-header" href="{% url 'exibir_shows' %}">Todos os shows</a>
+                            <a class="dropdown-item btn-header" href="{% url 'filtrar_shows' 'itu' %}">Itu</a>
+                            <a class="dropdown-item btn-header" href="{% url 'filtrar_shows' 'salto' %}">Salto</a>
+                            <a class="dropdown-item btn-header" href="{% url 'filtrar_shows' 'campinas' %}">Campinas</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link link btn-header btn-links" href="{% url 'podcast' %}"
+                            aria-expanded="false">Podcasts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link link btn-header btn-links" href="{% url 'publicidade' %}"
+                            aria-expanded="false">Marketing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link link btn-header btn-links"
+                            href="{% url 'home' %}#contacts02-9">Contato</a>
+                    </li>
+                    <li class="nav-item mobile-profile">
+                        {% if user.is_authenticated %}
+                            <a class="nav-link link btn-header btn-links" href="{% url 'meu_perfil' %}">Meu perfil</a>
+                        {% else %}
+                            <a class="nav-link link btn-header btn-links" href="{% url 'login' %}">Entrar</a>
+                        {% endif %}
+                    </li>
+                </ul>
+
+                <div class="desktop-profile">
+                    <button class="theme-btn active" aria-label="Change Theme" onclick="changeTheme()" title="Change Theme" data-theme-btn>
+                        <span class="theme-icon"></span>
+                    </button>
+                </div>
+
+                {% if user.is_authenticated %}
+                <div class="desktop-profile me-3">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-link btn-header text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        <ion-icon class="icons me-1" name="person-circle-outline"></ion-icon>
+                      {{ request.user }}
+                    </button>
+                        <ul class="dropdown-menu mt-3">
+                            <li><a class="dropdown-item ps-3" href="#"><ion-icon class="icons me-1" style="margin-bottom: -5px;" name="person-outline"></ion-icon>Meu perfil</a></li>
+                            
+                            {% if group == "admin" %}
+                                <li>
+                                    <a class="dropdown-item ps-4" href="{% url 'cadastrar_shows' %}">
+                                        <ion-icon class="icons me-1" style="margin-bottom: -5px; margin-left: -10px;" name="musical-notes-outline"></ion-icon>Novo Show</a>
+                                </li>
+                            {% endif %}
+                            <li>
+                                <a class="dropdown-item ps-3" href="{% url 'logout' %}">
+                                    <ion-icon class="icons me-1" style="margin-bottom: -5px;" name="exit-outline"></ion-icon>Sair</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                {% else %}
+                <a href="{% url 'login' %}">
+                    <button class="desktop-profile" class="fs-5 me-5 ms-3 btn-header">Entrar</button>
+                </a>
+                {% endif %}
+            </div>
+            </div>
+        </div>
+    </nav>
+</section>
+<div class="container-fluid" style="margin-top: 7rem;">
+    <div class="row">
+        <div class="display-6 text-center mt-5">Senha alterada com sucesso!</div>
+        <div class="col-md-4"></div>
+        <div class="col-md-5 m-auto mb-5 mt-3">
+            <a href="{% url 'home'%}">
+                <button class="btn padding-btn rounded-pill btn-secondary">Voltar</button>
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

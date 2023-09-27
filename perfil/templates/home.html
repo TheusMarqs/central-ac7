@@ -1,0 +1,344 @@
+{% extends 'bases/base.html' %} {% load static %} {% block 'head' %} {% block 'title' %}
+<title>Home</title>{% endblock %} {% endblock %} {% block 'body' %}
+<section data-bs-version="5.1" class="menu menu2 cid-tJS6tZXiPa" once="menu" id="menu02-0">
+
+
+    <nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
+        <div class="container">
+            <div class="navbar-brand">
+                <span class="navbar-logo">
+                    <a href="#">
+                        <img src="assets/images/logo.png" style="height: 2.6rem;">
+                    </a>
+                </span>
+                <span class="navbar-caption-wrap"><a class="navbar-caption btn-header display-4"
+                        href="{% url 'home' %}">AC7</a></span>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbarSupportedContent" data-bs-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+            <div class="me-3 mobile-profile">
+                <button class="theme-btn active" aria-label="Change Theme" onclick="changeTheme()" title="Change Theme" data-theme-btn>
+                    <span class="theme-icon"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle link btn-header btn-links" href="#" id="navbarDropdownMenuLink">
+                            Shows Musicais
+                        </a>
+                        <div class="dropdown-menu dropdown-shows shadow" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item btn-header" href="{% url 'exibir_shows' %}">Todos os shows</a>
+                            <a class="dropdown-item btn-header" href="{% url 'filtrar_shows' 'itu' %}">Itu</a>
+                            <a class="dropdown-item btn-header" href="{% url 'filtrar_shows' 'salto' %}">Salto</a>
+                            <a class="dropdown-item btn-header" href="{% url 'filtrar_shows' 'campinas' %}">Campinas</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link link btn-header btn-links" href="{% url 'podcast' %}" aria-expanded="false">Podcasts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link link btn-header btn-links" href="{% url 'publicidade' %}">Marketing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link link btn-header btn-links" href="index.html#contacts02-9">Contato</a>
+                    </li>
+                    <li class="nav-item mobile-profile">
+                        {% if user.is_authenticated %}
+                            <a class="nav-link link btn-header btn-links" href="{% url 'meu_perfil' %}">Meu perfil</a>
+                        {% else %}
+                            <a class="nav-link link btn-header btn-links" href="{% url 'login' %}">Entrar</a>
+                        {% endif %}
+                    </li>
+                </ul>
+
+                <div class="desktop-profile">
+                    <button class="theme-btn active" aria-label="Change Theme" onclick="changeTheme()" title="Change Theme" data-theme-btn>
+                        <span class="theme-icon"></span>
+                    </button>
+                </div>
+
+                {% if user.is_authenticated %}
+                <div class="desktop-profile me-3">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-link btn-header text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        <ion-icon class="icons me-1" name="person-circle-outline"></ion-icon>
+                      {{ request.user }}
+                    </button>
+                        <ul class="dropdown-menu mt-3">
+                            <li>
+                                <a class="dropdown-item ps-3" href="{% url 'meu_perfil' %}">
+                                    <ion-icon class="icons me-1" style="margin-bottom: -5px;" name="person-outline"></ion-icon>Meu perfil</a>
+                            </li>
+                            
+                            {% if group == "admin" %}
+                                <li>
+                                    <a class="dropdown-item ps-4" href="{% url 'cadastrar_shows' %}">
+                                        <ion-icon class="icons me-1" style="margin-bottom: -5px; margin-left: -10px;" name="musical-notes-outline"></ion-icon>Novo Show</a>
+                                </li>
+                            {% endif %}
+                            <li>
+                                <a class="dropdown-item ps-3" href="{% url 'logout' %}">
+                                    <ion-icon class="icons me-1" style="margin-bottom: -5px;" name="exit-outline"></ion-icon>Sair</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                {% else %}
+                <a href="{% url 'login' %}">
+                    <button class="fs-5 me-5 ms-3 btn-header desktop-profile">Entrar</button>
+                </a>
+                {% endif %}
+            </div>
+        </div>
+    </nav>
+</section>
+
+<section data-bs-version="5.1" class="header1 cid-tPQ93ObpDq mbr-fullscreen" id="header1-1t">
+
+    <div class="mbr-overlay" style="opacity: 0.1; background-color: rgb(250, 250, 250);"></div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-lg-5">
+                <h1 class="mbr-section-title mbr-fonts-style mb-3 mt-5 display-1 text-black"><strong>Bem vindo à central
+                        AC7!&nbsp;</strong>
+                </h1>
+
+                <p class="mbr-text mbr-fonts-style display-7 text-black">
+                    Fique a vontade para explorar todas as funcionalidades e serviços que oferecemos!</p>
+            </div>
+        </div>
+    </div>
+    <div id="teste"></div>
+</section>
+
+
+<section data-bs-version="5.1" class="features13 cid-tPQ9sLdeje" id="features13-1v">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-6">
+                <div class="card-wrapper">
+                    <div class="card-box align-left">
+                        <h4 class="card-title mbr-fonts-style mb-md-5 display-2"><strong>O que é AC7?</strong>
+                        </h4>
+                        <p class="mbr-text mbr-fonts-style mb-5 display-7">Somos uma organização fundada em 2023 com o propósito de oferecer diversos serviços, como todos esses que você ja viu e outros diversos projetos que estão por vir!</p>
+
+                        <p class="display-7">
+                            Entre em contato para saber mais!
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-6">
+                <div class="features-without-image active">
+                    <div class="item-wrapper mbr-flex">
+                        <div class="icon-box">
+                            <ion-icon class="icons" style="color: white;" name="book-outline"></ion-icon>
+                        </div>
+                        <div class="text-box">
+                            <h4 class="icon-title mbr-fonts-style display-7">
+                                <strong>Transparência</strong>
+                            </h4>
+                            <h5 class="icon-text mbr-fonts-style display-4">
+                                Totalmente transparentes e sinceros com o cliente, visando sempre a criação de uma boa parceria de confiança.
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="item features-without-image">
+                    <div class="item-wrapper mbr-flex">
+                        <div class="icon-box">
+                            <ion-icon class="icons" style="color: white;" name="lock-closed-outline"></ion-icon>
+                        </div>
+                        <div class="text-box">
+                            <h4 class="icon-title mbr-fonts-style display-7">
+                                <strong>Segurança</strong>
+                            </h4>
+                            <h5 class="icon-text mbr-fonts-style display-4">Garantimos sempre a máxima segurança dos dados de nossos clientes.</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="item features-without-image">
+                    <div class="item-wrapper mbr-flex">
+                        <div class="icon-box">
+                            <ion-icon class="icons" style="color: white;" name="diamond-outline"></ion-icon>
+                        </div>
+                        <div class="text-box">
+                            <h4 class="icon-title mbr-fonts-style display-7">
+                                <strong>Inovando sempre</strong>
+                            </h4>
+                            <h5 class="icon-text mbr-fonts-style display-4">Estamos sempre em busca de novos projetos e novidades para expandir ainda mais nosso catálogo de serviços!
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="features4 cid-tMlEXTHLbS" id="features04-w">
+
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 content-head">
+                <div class="mbr-section-head mb-5">
+                    <h4 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2"><strong>Nossos
+                            Serviços</strong></h4>
+                    <h5 class="mbr-section-subtitle mbr-fonts-style align-center mb-0 mt-4 display-7">Conheça os serviços que a AC7 oferece para você e para sua empresa.</h5>
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="item features-image col-12 col-md-6 col-lg-4">
+                <div class="item-wrapper">
+                    <div class="item-img">
+                        <img src="{% static 'img/podcast.jpg' %}">
+                    </div>
+                    <div class="item-content">
+                        <h5 class="item-title mbr-fonts-style display-5">
+                            <strong>Podcasts</strong>
+                        </h5>
+
+                        <p class="mbr-text mbr-fonts-style display-7">
+                            Oferecemos um estúdio profissional de podcasts para locação, equipado com cameras, microfones e fones de ouvido, todos com qualidades excepcionais!
+                        </p>
+                        <div class="mbr-section-btn item-footer"><a href="podcasts.html" class="btn padding-btn item-btn btn-primary display-7">Saiba mais</a></div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="item features-image col-12 col-md-6 col-lg-4">
+                <div class="item-wrapper">
+                    <div class="item-img">
+                        <img src="{% static 'img/shows.jpeg' %}">
+                    </div>
+                    <div class="item-content">
+                        <h5 class="item-title mbr-fonts-style display-5">
+                            <strong>Shows</strong>
+                        </h5>
+
+                        <p class="mbr-text mbr-fonts-style display-7">
+                            Organizamos e vendemos ingressos de diversos shows musicais pelas cidades de Itu, Campinas e Sorocaba, venha conferir!
+                        </p>
+                        <div class="mbr-section-btn item-footer"><a href="shows.html" class="btn padding-btn item-btn btn-primary display-7">Saiba mais</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="item features-image col-12 col-md-6 col-lg-4">
+                <div class="item-wrapper">
+                    <div class="item-img">
+                        <img src="{% static 'img/marketing.png' %}">
+                    </div>
+                    <div class="item-content">
+                        <h5 class="item-title mbr-fonts-style display-5">
+                            <strong>Marketing</strong>
+                        </h5>
+
+                        <p class="mbr-text mbr-fonts-style display-7">
+                            Tem uma empresa e quer impulsionar a divulgação em redes sociais e websites? Fale conosco, fazmos todo o serviço de marketing!
+                        </p>
+                        <div class="mbr-section-btn item-footer"><a href="" class="btn padding-btn item-btn btn-primary display-7">Saiba mais</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section data-bs-version="5.1" class="form5 cid-tJS9pBcTSa" id="form02-6">
+
+
+    <div class="container">
+        <div class="mbr-section-head mb-5">
+            <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
+                <strong>Nos envie uma mensagem!</strong>
+            </h3>
+        </div>
+        <div class="row justify-content-center mt-4">
+            <div class="col-lg-8 mx-auto mbr-form" data-form-type="formoid">
+                <form action="https://formspree.io/f/xleybzwd" method="POST" class="mbr-form form-with-styler">
+                    <div class="row">
+                        <div class="col-md col-sm-12 form-group mb-3">
+                            <input type="text" name="Nome" placeholder="Nome" class="form-control">
+                        </div>
+                        <div class="col-md col-sm-12 form-group mb-3">
+                            <input type="email" name="Email" placeholder="Email" class="form-control">
+                        </div>
+                        <div class="col-12 form-group mb-3">
+                            <input type="number" name="Telefone" placeholder="Telefone" class="form-control">
+                        </div>
+                        <div class="col-12 form-group mb-3" data-for="textarea">
+                            <textarea name="Mensagem" placeholder="Mensagem" class="form-control"></textarea>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 align-center mbr-section-btn">
+                            <button type="submit" class="btn padding-btn btn-primary display-7">Enviar mensagem</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="contacts2 map1 cid-tLdYHD757A" id="contacts02-9">
+
+
+
+
+    <div class="container">
+        <div class="mbr-section-head mb-5">
+            <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
+                <strong>Contatos</strong>
+            </h3>
+
+        </div>
+        <div class="row justify-content-center mt-4">
+            <div class="card col-12 col-md-5">
+                <div class="card-wrapper">
+                    <div class="text-wrapper">
+                        <h5 class="cardTitle mbr-fonts-style mb-2 display-5">
+                            <strong>Entre em contato</strong>
+                        </h5>
+                        <ul class="list mbr-fonts-style display-7">
+                            <li class="mbr-text item-wrap"><span style="font-size: 1.4rem;">Phone: </span><a href="tel:+12345678910" class="text-primary" style="font-size: 1.4rem;">0 (800)
+                                    123 45 67</a><br></li>
+                            <li class="mbr-text item-wrap">WhatsApp: <a href="https://wa.me/5511942528100" class="text-primary">(11) 94252-8100</a></li>
+                            <li class="mbr-text item-wrap">Email: <a href="mailto:info@site.com" class="text-primary">ituengenhariauniao@gmail.com</a></li>
+                            <li class="mbr-text item-wrap"><br></li>
+                            <li class="mbr-text item-wrap">Endereço: </li>
+                            <li class="mbr-text item-wrap">Av. Eugen Wissmann, 49, São Luiz</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="map-wrapper col-12 col-md-7">
+                <div class="google-map"><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14660.816559652169!2d-47.2788317!3d-23.272031!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cf450c3cd9555d%3A0x16930649d792372!2zVW5pw6NvIEltw7N2ZWlzIEl0dQ!5e0!3m2!1spt-BR!2sbr!4v1694702297933!5m2!1spt-BR!2sbr"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    window.onbeforeunload = () => {
+        for (const form of document.getElementsByTagName('form')) {
+            form.reset();
+        }
+    }
+</script>
+{% endblock %}

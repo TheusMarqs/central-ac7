@@ -1,0 +1,196 @@
+{% extends 'bases/base.html' %} {% load static %} {% block 'head' %} {% block 'title'%}
+<title>Ingressos</title>{% endblock %} {% endblock %} {% block 'body' %}
+<section data-bs-version="5.1" class="menu menu2 cid-tJS6tZXiPa" once="menu" id="menu02-22">
+
+
+    <nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
+        <div class="container">
+            <div class="navbar-brand">
+                <span class="navbar-logo">
+                    <a href="https://mobirise.com">
+                        <img src="assets/images/logo.png" style="height: 2.6rem;">
+                    </a>
+                </span>
+                <span class="navbar-caption-wrap"><a class="navbar-caption btn-header display-4"
+                        href="{% url 'home' %}">AC7</a></span>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbarSupportedContent" data-bs-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+            <div class="me-3 mobile-profile">
+                <button class="theme-btn active" aria-label="Change Theme" onclick="changeTheme()" title="Change Theme" data-theme-btn>
+                    <span class="theme-icon"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
+                    <li class="nav-item">
+                        <a class="nav-link link btn-header btn-links" href="{% url 'home' %}">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle link btn-header btn-links" href="#" id="navbarDropdownMenuLink">
+                            Shows Musicais
+                        </a>
+                        <div class="dropdown-menu dropdown-shows shadow" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item btn-header" href="{% url 'exibir_shows' %}">Todos os shows</a>
+                            <a class="dropdown-item btn-header" href="{% url 'filtrar_shows' 'itu' %}">Itu</a>
+                            <a class="dropdown-item btn-header" href="{% url 'filtrar_shows' 'salto' %}">Salto</a>
+                            <a class="dropdown-item btn-header" href="{% url 'filtrar_shows' 'campinas' %}">Campinas</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link link btn-header btn-links" href="{% url 'podcast' %}" aria-expanded="false">Podcasts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link link btn-header btn-links" href="{% url 'publicidade' %}" aria-expanded="false">Marketing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link link btn-header btn-links" href="{% url 'home' %}#contacts02-9">Contato</a>
+                    </li>
+                    <li class="nav-item mobile-profile">
+                        {% if user.is_authenticated %}
+                        <a class="nav-link link btn-header btn-links" href="{% url 'meu_perfil' %}">Meu perfil</a> {% else %}
+                        <a class="nav-link link btn-header btn-links" href="{% url 'login' %}">Entrar</a> {% endif %}
+                    </li>
+                </ul>
+
+                <div class="desktop-profile">
+                    <button class="theme-btn active" aria-label="Change Theme" onclick="changeTheme()" title="Change Theme" data-theme-btn>
+                        <span class="theme-icon"></span>
+                    </button>
+                </div>
+
+                {% if user.is_authenticated %}
+                <div class="desktop-profile me-3">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-link btn-header text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        <ion-icon class="icons me-1" name="person-circle-outline"></ion-icon>
+                      {{ request.user }}
+                    </button>
+                        <ul class="dropdown-menu mt-3">
+                            <li>
+                                <a class="dropdown-item ps-3" href="#">
+                                    <ion-icon class="icons me-1" style="margin-bottom: -5px;" name="person-outline"></ion-icon>Meu perfil</a>
+                            </li>
+
+                            {% if group == "admin" %}
+                                <li>
+                                    <a class="dropdown-item ps-4" href="{% url 'cadastrar_shows' %}">
+                                        <ion-icon class="icons me-1" style="margin-bottom: -5px; margin-left: -10px;" name="musical-notes-outline"></ion-icon>Novo Show</a>
+                                </li>
+                            {% endif %}
+                            <li>
+                                <a class="dropdown-item ps-3" href="{% url 'logout' %}">
+                                    <ion-icon class="icons me-1" style="margin-bottom: -5px;" name="exit-outline"></ion-icon>Sair</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                {% else %}
+                <a href="{% url 'login' %}">
+                    <button class="fs-5 me-5 ms-3 btn-header desktop-profile">Entrar</button>
+                </a>
+                {% endif %}
+            </div>
+        </div>
+        </div>
+    </nav>
+</section>
+
+<section data-bs-version="5.1" class="slider1 cid-tQd3laBEDC" id="slider1-2b">
+
+    <div id="carouselExampleIndicators" class="carousel slide">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="{% static 'img/guitarra.jpg' %}" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h3 class="text-black"><strong>{{ artist | title }}</strong></h3>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="..." class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h3 class="text-black"><strong>{{ artist | title }}</strong></h3>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="..." class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h3 class="text-black"><strong>{{ artist | title }}</strong></h3>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+</section>
+
+<section data-bs-version="5.1" class="features7 cid-tQd3Fxn5iO" id="features7-2c">
+    <!---->
+
+
+
+
+    <div class="container">
+        <div class="title">
+            <h3 class="mbr-section-title mbr-fonts-style mb-4 display-2 align-center">
+                <strong>Compre já seu ingresso!</strong>
+            </h3>
+        </div>
+        {% for show in shows %}
+        <div class="card-wrapper">
+            <div class="row align-items-center">
+                <div class="col-12 col-lg-6">
+                    <div class="image-wrapper">
+                        <img src="../../media/{{ show.image }}">
+                    </div>
+                </div>
+                <div class="col-12 col-lg">
+                    <div class="text-box">
+                        <h5 class="mbr-title mbr-fonts-style display-2 mb-5 text-black">
+                            <strong>{{ show.artist | title }}</strong>
+                        </h5>
+
+                        <ul>
+                            <li class="mbr-fonts-style display-7 text-black"><strong>Data:</strong> {{ show.datetime }}</li>
+                            <li class="mbr-fonts-style display-7 text-black"><strong>Cidade:</strong> {{ show.city | title }}</li>
+                            <li class="mbr-fonts-style display-7 text-black"><strong>Bairro:</strong> {{ show.neighbourhood | title }}</li>
+                            <li class="mbr-fonts-style display-7 text-black"><strong>Rua:</strong> {{ show.street | title }}</li>
+                            <li class="mbr-fonts-style display-7 text-black"><strong>CEP:</strong> {{ show.cep }}</li>
+                        </ul>
+
+                        <div class="cost">
+                            <span class="currentcost mbr-fonts-style pr-2 display-2 text-black">R${{ show.price }}</span>
+                            <span class="oldcost mbr-fonts-style display-2"></span>
+                        </div>
+                        <script src="https://www.mercadopago.com.br/integrations/v1/web-payment-checkout.js"
+                        data-preference-id="1218207994-74fcb234-6283-46bf-89a4-c37642a4c897" data-source="button">
+                        </script>
+                        <div class="mbr-section-btn pt-3">
+                            <a href="https://mobiri.se" class="btn padding-btn btn-primary display-4">Adquirir ingresso</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

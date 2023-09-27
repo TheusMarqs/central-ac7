@@ -1,0 +1,243 @@
+:root {
+    --transition-1: 0.25s ease-in-out;
+    --sizzling-sunrise: hsl(51, 95%, 54%);
+}
+
+body.light_theme {
+    --color-primary: black;
+    --bg-primary: #F7F7F7;
+    --bg-secondary: hsl(0, 0%, 100%);
+    --bg-terciary: whitesmoke;
+    --bg-quartenary: #EDEFEB;
+    --bg-theme-btn: white;
+    --bg-services: #2b7a69;
+    --bg-header: #F7F7F7;
+    --color-crud-icons: black;
+    --bg-hamburger: black;
+}
+
+body.dark_theme {
+    --color-primary: white;
+    --bg-primary: hsl(0, 0%, 12%);
+    --bg-secondary: hsl(0, 0%, 19%);
+    --bg-terciary: hsl(0, 0%, 19%);
+    --bg-quartenary: hsl(0, 0%, 19%);
+    --bg-theme-btn: hsl(0, 0%, 19%);
+    --bg-services: hsl(0, 0%, 12%);
+    --bg-header: hsl(0, 0%, 31%);
+    --color-crud-icons: white;
+    --bg-hamburger: white;
+}
+
+body {
+    background: var(--bg-terciary);
+    transition: var(--transition-1);
+    color: var(--color-primary);
+}
+
+.icons {
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.icons:hover {
+    opacity: 80%;
+}
+
+.icon-box .icons {
+    cursor: default;
+}
+
+.icon-box .icons:hover {
+    opacity: 100%;
+}
+
+@media (max-width: 992px) {
+    .cid-tJS6tZXiPa .icons {
+        display: none;
+    }
+    .cid-tJS6tZXiPa .navbar-collapse {
+        background-color: var(--bg-header);
+    }
+}
+
+@media (max-width: 990px) {
+    .desktop-profile {
+        display: none !important;
+    }
+    .mobile-profile {
+        display: block !important;
+    }
+}
+
+@media (min-width: 991px) {
+    .mobile-profile {
+        display: none !important;
+    }
+}
+
+.theme-btn {
+    padding: 4px;
+    width: 48px;
+    background: var(--bg-theme-btn) !important;
+    border-radius: 100px;
+    transition: var(--transition-1);
+}
+
+.theme-icon {
+    position: relative;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    box-shadow: inset 9px -6px var(--color-primary);
+    transition: var(--transition-1);
+    display: block;
+}
+
+.theme-btn.active .theme-icon {
+    left: 20px;
+    box-shadow: inset 20px -20px var(--sizzling-sunrise);
+}
+
+.cid-tPQ9sLdeje {
+    background-color: var(--bg-secondary);
+}
+
+.cid-tMlEXTHLbS {
+    background-color: var(--bg-services);
+    color: black;
+}
+
+.cid-tJS9pBcTSa {
+    background-color: var(--bg-secondary);
+}
+
+.cid-tLdYHD757A {
+    background-color: var(--bg-secondary);
+}
+
+.cid-tJS9NNcTLZ {
+    background-color: var(--bg-services);
+}
+
+.btn-links {
+    font-size: 1.5em;
+}
+
+@media (min-width: 1200px) {
+    .btn-links {
+        font-size: 1.8em;
+    }
+}
+
+label {
+    margin-left: 20px;
+}
+
+.passwordinput {
+    margin-bottom: 12px !important;
+}
+
+#hint_id_password1 {
+    color: var(--color-primary) !important;
+    opacity: 70%;
+}
+
+#hint_id_username {
+    color: var(--color-primary) !important;
+    margin-left: 20px;
+    margin-top: 5px;
+    opacity: 70%;
+}
+
+#hint_id_password2 {
+    color: var(--color-primary) !important;
+    opacity: 70%;
+}
+
+.cid-tJS9NNcTLZ {
+    display: flex;
+    bottom: 0 !important;
+}
+
+.form-login {
+    background-color: var(--bg-terciary);
+}
+
+.card-txt {
+    color: black;
+}
+
+.cid-tQcZ7TJGNn {
+    background-color: var(--bg-secondary);
+}
+
+.cid-tQcXkuPmsA {
+    background-color: var(--bg-secondary);
+}
+
+.cid-tQcYAUOhvJ {
+    background-color: var(--bg-secondary);
+}
+
+.cid-tJS9NNcTLZ .social-row .soc-item a .mbr-iconfont {
+    color: var(--bg-services);
+}
+
+.crud-icons {
+    color: var(--color-crud-icons) !important;
+}
+
+.cid-tPVE67e4kU {
+    background-color: var(--bg-services) !important;
+}
+
+.cid-tPVEG1qAg0 {
+    background-color: var(--bg-secondary) !important;
+}
+
+.cid-tPVE67e4kU .topbg {
+    background-color: var(--bg-secondary);
+}
+
+.cid-tQd3Fxn5iO {
+    background-color: var(--bg-secondary);
+}
+
+.cid-tJS6tZXiPa .container {
+    background-color: var(--bg-header);
+}
+
+.btn-header {
+    color: var(--color-primary) !important;
+}
+
+.dropdown-shows {
+    background-color: var(--bg-header) !important;
+}
+
+.hamburger span {
+    background-color: var(--bg-hamburger);
+}
+
+.alert.alert-danger {
+    background-color: #dc3545 !important;
+    color: white !important;
+}
+
+.cid-tQiZwKdxH7 {
+    background-color: var(--bg-quartenary) !important;
+}
+
+.cid-tQj1MWTTwS {
+    background-color: var(--bg-quartenary) !important;
+}
+
+.cid-tQj5WmtEmK {
+    background-color: var(--bg-header);
+}
+
+.cid-tQjeqrFqk1 {
+    background-color: var(--bg-header);
+}
